@@ -1,48 +1,148 @@
-# 🚀 Projecte Symfony: [Nom del Projecte]
+# 🌐 Portfolio - [El teu nom]
 
-Aquest projecte forma part del mòdul de **Desenvolupament Web en Entorn Servidor (DAW)**. És una aplicació web que permet [explicar breument la lògica: gestió d'usuaris, botiga, blog, etc.].
+[🇨🇦 Català](#-català) | [🇪🇸 Castellano](#-castellano) | [🇬🇧 English](#-english)
 
-## 📖 Documentació Completa
-Pots consultar els detalls tècnics, diagrames de base de dades i guies d'usuari a la nostra pàgina de documentació:
-👉 **[Enllaç a la teva GitHub Page]** (https://ricarddam.github.io/ricard.github.io/)
+---
 
-## 🛠️ Stack Tècnic
-- **Framework:** Symfony 7.x
-- **Llenguatge:** PHP 8.2+
-- **ORM:** Doctrine
-- **Base de dades:** MariaDB / MySQL
-- **Motor de plantilles:** Twig
+# 🇨🇦 Català
 
-## 🔧 Instal·lació i Posada en Marxa
+## 👨‍💻 Perfil
 
-1. **Clonar el repositori:**
-   ```bash
-   git clone [https://github.com/el-teu-usuari/el-teu-projecte.git](https://github.com/el-teu-usuari/el-teu-projecte.git)
-   cd el-teu-projecte
-   ```
+Sóc un desenvolupador web format en el cicle de **Desenvolupament d'Aplicacions Web (DAW)** a l'Institut Montilivi. També he cursat el cicle de **SMX** a l'Institut Palamós.
 
-2. **Instal·lar les dependències de Composer:**
-   ```bash
-   composer install
-   ```
+Actualment estic realitzant pràctiques a **Accenture**, treballant amb **Adobe Experience Manager (AEM)** en l'àmbit de frontend.
 
-3. **Configurar l'entorn:**
-   Copia el fitxer `.env` a `.env.local` i configura la teva cadena de connexió a la base de dades:
-   ```text
-   DATABASE_URL="mysql://usuari:password@127.0.0.1:3306/nom_bd?serverVersion=8.0"
-   ```
+Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims. Tinc experiència en manteniment i configuració de sistemes informàtics i xarxes, així com en el desenvolupament de pàgines web dinàmiques.
 
-4. **Crear la base de dades i executar migracions:**
-   ```bash
-   php bin/console doctrine:database:create
-   php bin/console doctrine:migrations:migrate
-   ```
+## 🚀 Disponibilitat
 
-5. **Aixecar el servidor local:**
-   ```bash
-   symfony serve
-   ```
+* ✔ Disponibilitat immediata
+* ✔ Ordinador propi
 
-## ✒️ Autor
-* **Nom:** [El teu nom]
-* **Grup:** 2n DAW - Institut Montilivi
+## 🛠️ Coneixements tècnics
+
+* Llenguatges: **C++, C#, JavaScript, PHP**
+* Bases de dades: **MySQL**
+* Control de versions: **Git i GitHub**
+* Sistemes operatius: **Windows i Linux**
+* Altres: **AEM (Frontend), Java**
+
+## 💼 Experiència
+
+* 🏢 Pràctiques a **Accenture**
+
+  * Desenvolupament frontend amb **AEM**
+  * Creació i personalització de components
+  * Treball en entorns corporatius
+
+## 💡 Competències
+
+* Instal·lació i administració de sistemes operatius
+* Configuració i manteniment de xarxes locals
+* Desenvolupament web amb **HTML, CSS, JavaScript i PHP**
+* Resolució d'incidències tècniques
+
+## 🌍 Idiomes
+
+* Català: Nadiu
+* Castellà: Nadiu
+* Anglès: B2 (Curs de 54h a Malta)
+
+---
+
+# 🇪🇸 Castellano
+
+## 👨‍💻 Perfil
+
+Soy desarrollador web formado en el ciclo de **Desarrollo de Aplicaciones Web (DAW)** en el Institut Montilivi. También he estudiado **SMX** en el Institut Palamós.
+
+Actualmente estoy realizando prácticas en **Accenture**, trabajando con **Adobe Experience Manager (AEM)** en frontend.
+
+Me considero una persona trabajadora, paciente y enfocada en ofrecer resultados óptimos. Tengo experiencia en mantenimiento de sistemas informáticos, redes y desarrollo de páginas web dinámicas.
+
+## 🚀 Disponibilidad
+
+* ✔ Disponibilidad inmediata
+* ✔ Ordenador propio
+
+## 🛠️ Conocimientos técnicos
+
+* Lenguajes: **C++, C#, JavaScript, PHP**
+* Bases de datos: **MySQL**
+* Control de versiones: **Git y GitHub**
+* Sistemas operativos: **Windows y Linux**
+* Otros: **AEM (Frontend), Java**
+
+## 💼 Experiencia
+
+* 🏢 Prácticas en **Accenture**
+
+  * Desarrollo frontend con **AEM**
+  * Creación y personalización de componentes
+  * Trabajo en entornos corporativos
+
+## 💡 Habilidades
+
+* Instalación y administración de sistemas operativos
+* Configuración y mantenimiento de redes
+* Desarrollo web con **HTML, CSS, JavaScript y PHP**
+* Resolución de incidencias técnicas
+
+## 🌍 Idiomas
+
+* Catalán: Nativo
+* Español: Nativo
+* Inglés: B2
+
+---
+
+# 🇬🇧 English
+
+## 👨‍💻 Profile
+
+I am a web developer trained in **Web Application Development (DAW)** at Institut Montilivi. I also completed **SMX studies** at Institut Palamós.
+
+Currently, I am doing an internship at **Accenture**, working with **Adobe Experience Manager (AEM)** in frontend development.
+
+I am a hardworking and patient person focused on delivering optimal results. I have experience in system administration, networking, and dynamic web development.
+
+## 🚀 Availability
+
+* ✔ Immediate availability
+* ✔ Own computer
+
+## 🛠️ Technical Skills
+
+* Languages: **C++, C#, JavaScript, PHP**
+* Databases: **MySQL**
+* Version control: **Git & GitHub**
+* Operating Systems: **Windows & Linux**
+* Other: **AEM (Frontend), Java**
+
+## 💼 Experience
+
+* 🏢 Internship at **Accenture**
+
+  * Frontend development using **AEM**
+  * Component creation and customization
+  * Working in enterprise environments
+
+## 💡 Skills
+
+* Operating system installation and administration
+* Network configuration and maintenance
+* Web development using **HTML, CSS, JavaScript, PHP**
+* Troubleshooting technical issues
+
+## 🌍 Languages
+
+* Catalan: Native
+* Spanish: Native
+* English: B2
+
+---
+
+## ✒️ Author
+
+**Nom:** [El teu nom]
+**Formació:** DAW - Institut Montilivi

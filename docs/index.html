@@ -147,12 +147,13 @@
     <a href="#skills">Habilitats</a>
     <a href="#projects">Projectes</a>
     <a href="#contact">Contacte</a>
+    <button class="toggle-btn" id="theme-toggle">🌙</button>
   </div>
 </nav>
 
 <header>
   <h1 id="typing"></h1>
-  <p>Frontend Developer | AEM | Full Stack Developer</p>
+  <p>Full Stack Developer</p>
 </header>
 
 <section id="about">
@@ -276,7 +277,21 @@
     }
   }
 
+
   typing();
+
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light");
+
+    if (body.classList.contains("light")) {
+      toggleBtn.textContent = "🌙"; 
+    } else {
+      toggleBtn.textContent = "☀️"; 
+    }
+  });
 </script>
 
 </body>

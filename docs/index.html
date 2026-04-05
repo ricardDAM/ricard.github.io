@@ -9,9 +9,16 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0f172a;
-      color: white;
+      background: #0a0a0a;
+      color: #ffffff;
       line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* LIGHT MODE */
+    body.light {
+      background: #f5f5f5;
+      color: #111111;
     }
 
     nav {
@@ -19,27 +26,48 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background: #020617;
+      background: #000000;
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 2px solid #ff6a00;
+    }
+
+    body.light nav {
+      background: #ffffff;
+      border-bottom: 2px solid #ff6a00;
     }
 
     nav a {
-      color: white;
+      color: #ff6a00;
       margin-left: 20px;
       text-decoration: none;
       font-size: 0.9rem;
     }
 
+    .toggle-btn {
+      background: #ff6a00;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 20px;
+    }
+
     header {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, #1e293b, #334155);
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      border-bottom: 2px solid #ff6a00;
     }
 
-    header h1 { font-size: 3rem; }
-    header p { opacity: 0.85; margin-top: 10px; }
+    body.light header {
+      background: linear-gradient(135deg, #ffffff, #e5e5e5);
+    }
+
+    header h1 { font-size: 3rem; color: #ff6a00; }
+    header p { opacity: 0.85; margin-top: 10px; color: #38bdf8; }
 
     section {
       max-width: 1000px;
@@ -48,9 +76,10 @@
     }
 
     h2 {
-      border-bottom: 2px solid #38bdf8;
+      border-bottom: 2px solid #ff6a00;
       margin-bottom: 30px;
       padding-bottom: 10px;
+      color: #ff6a00;
     }
 
     .grid {
@@ -60,22 +89,28 @@
     }
 
     .card {
-      background: #1e293b;
+      background: #111111;
       padding: 20px;
       border-radius: 12px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #222;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease;
+      opacity: 0;
+      transform: translateY(40px);
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    body.light .card {
+      background: #ffffff;
+      border: 1px solid #ddd;
     }
 
-    ul { padding-left: 20px; }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .skills span {
       display: inline-block;
-      background: #38bdf8;
+      background: #ff6a00;
       color: black;
       padding: 6px 10px;
       margin: 5px;
@@ -83,37 +118,48 @@
       font-size: 0.8rem;
     }
 
+    .accenture-logo {
+      width: 120px;
+      margin-top: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
-      background: #020617;
+      background: #000000;
       font-size: 0.8rem;
       margin-top: 40px;
+      border-top: 2px solid #ff6a00;
+    }
+
+    body.light footer {
+      background: #ffffff;
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <h3>Ricard</h3>
+  <h3 style="color:#ff6a00;">Ricard</h3>
   <div>
     <a href="#about">Sobre mi</a>
     <a href="#experience">Experiència</a>
     <a href="#skills">Habilitats</a>
     <a href="#projects">Projectes</a>
     <a href="#contact">Contacte</a>
+    <button class="toggle-btn" onclick="canviarTema()">tema</button>
   </div>
 </nav>
 
 <header>
-  <h1>Ricard Ribas Herrera</h1>
+  <h1 id="typing"></h1>
   <p>Frontend Developer | AEM | Web Developer</p>
 </header>
 
 <section id="about">
   <h2>Perfil</h2>
   <div class="card">
-    <p>Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims. Tinc experiència en el manteniment i configuració de sistemes informàtics i xarxes, així com en el desenvolupament de pàgines web dinàmiques.</p>
+    <p>Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims...</p>
   </div>
 </section>
 
@@ -122,90 +168,34 @@
   <div class="grid">
     <div class="card">
       <h3>Accenture</h3>
+      <img class="accenture-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg">
       <p>Pràctiques Frontend (2025 - Actualment)</p>
-      <ul>
-        <li>Desenvolupament amb AEM</li>
-        <li>Creació de components</li>
-        <li>Tests unitaris amb Java</li>
-        <li>Ús d’Apache Sling per mapatge de peticions HTTP</li>
-        <li>Treball amb JCR (Apache Jackrabbit Oak)</li>
-        <li>Creació de Sling Models (POJOs)</li>
-        <li>Desenvolupament de Servlets per APIs i peticions personalitzades</li>
-        <li>Participació en projectes empresarials reals</li>
-      </ul>
     </div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Habilitats</h2>
-  <div class="card">
-    <ul>
-      <li>Instal·lar i administrar sistemes operatius</li>
-      <li>Configurar i mantenir xarxes locals</li>
-      <li>Desenvolupar pàgines web dinàmiques amb HTML, CSS, JavaScript i PHP</li>
-      <li>Resoldre incidències tècniques en entorns informàtics</li>
-      <li>Desenvolupament amb AEM (OSGi, Sling, JCR, Models, Servlets)</li>
-    </ul>
-  </div>
-
-  <div class="card skills">
-    <span>C++</span>
-    <span>C#</span>
-    <span>JavaScript</span>
-    <span>PHP</span>
-    <span>Java</span>
-    <span>MySQL</span>
-    <span>Git</span>
-    <span>GitHub</span>
-    <span>Windows</span>
-    <span>Linux</span>
-    <span>AEM</span>
-  </div>
-</section>
-
-<section>
-  <h2>Altres dades</h2>
-  <div class="card">
-    <ul>
-      <li>Disponibilitat immediata</li>
-      <li>Ordinador propi</li>
-      <li>Experiència amb bases de dades (MySQL)</li>
-      <li>Familiaritat amb Git i GitHub</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projectes</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Portfolio Web</h3>
-      <p>Pàgina personal amb HTML i CSS</p>
-    </div>
-    <div class="card">
-      <h3>CRUD PHP</h3>
-      <p>Aplicació amb base de dades MySQL</p>
-    </div>
-    <div class="card">
-      <h3>Web Components</h3>
-      <p>Projecte amb components reutilitzables</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contacte</h2>
-  <div class="card">
-    <p>Email: ricard.rh20@gmail.com</p>
-    <p>Tel: +34 678 146 423</p>
-    <p>Ubicació: Girona</p>
   </div>
 </section>
 
 <footer>
   <p>© 2025 Ricard Ribas Herrera | Portfolio</p>
 </footer>
+
+<script>
+  function canviarTema() {
+    document.body.classList.toggle('light');
+  }
+
+  const text = "Ricard Ribas Herrera";
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 80);
+    }
+  }
+  typing();
+
+ 
+</script>
 
 </body>
 </html>

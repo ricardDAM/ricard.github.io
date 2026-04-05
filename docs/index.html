@@ -5,116 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Ricard</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0f172a;
       color: white;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #020617;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
     header {
       text-align: center;
-      padding: 50px 20px;
+      padding: 80px 20px;
       background: linear-gradient(135deg, #1e293b, #334155);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    header p {
-      opacity: 0.8;
-    }
+    header h1 { font-size: 3rem; }
+    header p { opacity: 0.8; margin-top: 10px; }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     h2 {
       border-bottom: 2px solid #38bdf8;
+      margin-bottom: 30px;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: #1e293b;
       padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    ul {
-      padding-left: 20px;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    ul { padding-left: 20px; }
+
+    .skills span {
+      display: inline-block;
+      background: #38bdf8;
+      color: black;
+      padding: 6px 10px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 0.8rem;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       background: #020617;
-      font-size: 0.9em;
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      font-size: 0.8rem;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <h3>Ricard</h3>
+  <div>
+    <a href="#about">Sobre mi</a>
+    <a href="#experience">Experiència</a>
+    <a href="#projects">Projectes</a>
+    <a href="#contact">Contacte</a>
+  </div>
+</nav>
+
 <header>
-  <h1>Ricard H.</h1>
+  <h1>Ricard R.H.</h1>
   <p>Frontend Developer | AEM | Web Developer</p>
 </header>
 
-<section>
+<section id="about">
   <h2>Sobre mi</h2>
   <div class="card">
-    <p>Sóc una persona treballadora i orientada a resultats. Actualment estic especialitzant-me en desenvolupament frontend i treballo amb Adobe Experience Manager (AEM), creant components i participant en projectes reals.</p>
+    <p>Sóc un desenvolupador web en formació especialitzat en frontend. Actualment treballo amb Adobe Experience Manager (AEM) en un entorn professional, creant components i participant en projectes reals.</p>
   </div>
 </section>
 
-<section>
+<section id="experience">
   <h2>Experiència</h2>
-  <div class="card">
-    <h3>Pràctiques Frontend – Accenture</h3>
-    <p>2025 – Actualment</p>
-    <ul>
-      <li>Desenvolupament frontend amb AEM</li>
-      <li>Creació de components web</li>
-      <li>Projectes empresarials reals</li>
-    </ul>
+  <div class="grid">
+    <div class="card">
+      <h3>Accenture</h3>
+      <p>Pràctiques Frontend (2025 - Actualment)</p>
+      <ul>
+        <li>Desenvolupament amb AEM</li>
+        <li>Creació de components</li>
+        <li>Projectes empresarials</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Formació</h2>
-  <div class="card">
-    <p><strong>Institut Montilivi</strong> – DAW (Actualment)</p>
-    <p><strong>Institut de Palamós</strong> – SMX</p>
-  </div>
-</section>
-
-<section>
+<section id="skills">
   <h2>Habilitats</h2>
-  <div class="card">
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Adobe Experience Manager (AEM)</li>
-      <li>PHP i MySQL</li>
-      <li>Git i GitHub</li>
-    </ul>
+  <div class="card skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>MySQL</span>
+    <span>Git</span>
+    <span>AEM</span>
   </div>
 </section>
 
-<section>
+<section id="projects">
+  <h2>Projectes</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Portfolio Web</h3>
+      <p>Pàgina personal amb HTML i CSS</p>
+    </div>
+    <div class="card">
+      <h3>CRUD PHP</h3>
+      <p>Aplicació amb base de dades MySQL</p>
+    </div>
+    <div class="card">
+      <h3>Web Components</h3>
+      <p>Projecte amb components reutilitzables</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
   <h2>Contacte</h2>
   <div class="card">
     <p>Email: ricard.rh20@gmail.com</p>
@@ -124,7 +171,7 @@
 </section>
 
 <footer>
-  <p>© 2025 Ricard H.</p>
+  <p>© 2025 Ricard R.H. | Portfolio</p>
 </footer>
 
 </body>

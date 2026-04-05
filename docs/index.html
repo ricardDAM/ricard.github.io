@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Ricard</title>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,13 +14,12 @@
       background: #0a0a0a;
       color: #ffffff;
       line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
+      transition: 0.3s;
     }
 
-    /* LIGHT MODE */
     body.light {
       background: #f5f5f5;
-      color: #111111;
+      color: #111;
     }
 
     nav {
@@ -26,16 +27,14 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background: #000000;
+      background: #000;
+      border-bottom: 2px solid #ff6a00;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 2px solid #ff6a00;
     }
 
     body.light nav {
-      background: #ffffff;
-      border-bottom: 2px solid #ff6a00;
+      background: #fff;
     }
 
     nav a {
@@ -51,23 +50,28 @@
       padding: 8px 12px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.8rem;
-      margin-left: 20px;
     }
 
     header {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, #000000, #1a1a1a);
+      background: linear-gradient(135deg, #000, #1a1a1a);
       border-bottom: 2px solid #ff6a00;
     }
 
     body.light header {
-      background: linear-gradient(135deg, #ffffff, #e5e5e5);
+      background: linear-gradient(135deg, #fff, #e5e5e5);
     }
 
-    header h1 { font-size: 3rem; color: #ff6a00; }
-    header p { opacity: 0.85; margin-top: 10px; color: #38bdf8; }
+    header h1 {
+      font-size: 3rem;
+      color: #ff6a00;
+    }
+
+    header p {
+      color: #38bdf8;
+      margin-top: 10px;
+    }
 
     section {
       max-width: 1000px;
@@ -89,23 +93,15 @@
     }
 
     .card {
-      background: #111111;
+      background: #111;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #222;
-      transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     body.light .card {
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #ddd;
-    }
-
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .skills span {
@@ -126,17 +122,18 @@
     footer {
       text-align: center;
       padding: 30px;
-      background: #000000;
-      font-size: 0.8rem;
+      background: #000;
       margin-top: 40px;
       border-top: 2px solid #ff6a00;
     }
 
     body.light footer {
-      background: #ffffff;
+      background: #fff;
     }
   </style>
+
 </head>
+
 <body>
 
 <nav>
@@ -147,7 +144,7 @@
     <a href="#skills">Habilitats</a>
     <a href="#projects">Projectes</a>
     <a href="#contact">Contacte</a>
-    <button class="toggle-btn" onclick="canviarTema()">tema</button>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
   </div>
 </nav>
 
@@ -159,7 +156,7 @@
 <section id="about">
   <h2>Perfil</h2>
   <div class="card">
-    <p>Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims...</p>
+    <p>Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims. Tinc experiència en el manteniment i configuració de sistemes informàtics i xarxes, així com en el desenvolupament de pàgines web dinàmiques.</p>
   </div>
 </section>
 
@@ -170,31 +167,89 @@
       <h3>Accenture</h3>
       <img class="accenture-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg">
       <p>Pràctiques Frontend (2025 - Actualment)</p>
+      <ul>
+        <li>Desenvolupament amb AEM</li>
+        <li>Creació de components</li>
+        <li>Projectes empresarials reals</li>
+      </ul>
     </div>
   </div>
 </section>
 
+<section id="skills">
+  <h2>Habilitats</h2>
+
+  <div class="card">
+    <ul>
+      <li>Instal·lar i administrar sistemes operatius</li>
+      <li>Configurar i mantenir xarxes locals</li>
+      <li>Desenvolupar pàgines web (HTML, CSS, JS, PHP)</li>
+      <li>Resoldre incidències tècniques</li>
+    </ul>
+  </div>
+
+  <div class="card skills">
+    <span>C++</span>
+    <span>C#</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>MySQL</span>
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>Windows</span>
+    <span>Linux</span>
+    <span>AEM</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projectes</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Portfolio Web</h3>
+      <p>Pàgina personal amb HTML i CSS</p>
+    </div>
+    <div class="card">
+      <h3>CRUD PHP</h3>
+      <p>Aplicació amb MySQL</p>
+    </div>
+    <div class="card">
+      <h3>Web Components</h3>
+      <p>Components reutilitzables</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contacte</h2>
+  <div class="card">
+    <p>Email: ricard.rh20@gmail.com</p>
+    <p>Tel: +34 678 146 423</p>
+    <p>Ubicació: Girona</p>
+  </div>
+</section>
+
 <footer>
-  <p>© 2025 Ricard Ribas Herrera | Portfolio</p>
+  <p>© 2025 Ricard Ribas Herrera</p>
 </footer>
 
 <script>
-  function canviarTema() {
+  function toggleTheme() {
     document.body.classList.toggle('light');
   }
 
   const text = "Ricard Ribas Herrera";
   let i = 0;
+
   function typing() {
     if (i < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(i);
+      document.getElementById("typing").textContent += text.charAt(i);
       i++;
       setTimeout(typing, 80);
     }
   }
-  typing();
 
- 
+  typing();
 </script>
 
 </body>

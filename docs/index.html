@@ -25,6 +25,7 @@
     color: #111;
   }
 
+  /* NAV */
   nav {
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,7 @@
     border-bottom: 2px solid #ff6a00;
     position: sticky;
     top: 0;
+    z-index: 100;
   }
 
   body.light nav {
@@ -45,24 +47,25 @@
     margin-left: 20px;
     text-decoration: none;
     font-size: 0.9rem;
-      position: relative;
-    overflow: hidden;
+    position: relative;
+    padding-bottom: 3px;
   }
-  
+
+  /* SUBRATLLAT FI I CENTRAT */
   nav a::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
     height: 2px;
     background: #ff6a00;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: width 0.3s ease, left 0.3s ease;
   }
 
   nav a:hover::after {
-    transform: translateX(0);
+    width: 100%;
+    left: 0;
   }
 
   .toggle-btn {
@@ -119,6 +122,13 @@
     border-radius: 12px;
     border: 1px solid #222;
     transition: 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  body.light .card {
+    background: #fff;
+    border: 1px solid #ddd;
   }
 
   .card:hover {
@@ -133,11 +143,6 @@
     box-shadow: 0 0 15px rgba(255, 106, 0, 0.3);
   }
 
-  body.light .card {
-    background: #fff;
-    border: 1px solid #ddd;
-  }
-
   .skills span {
     display: inline-block;
     background: #ff6a00;
@@ -149,17 +154,17 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
+  .skills span:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.6);
+  }
+
   footer {
     text-align: center;
     padding: 30px;
     background: #000;
     margin-top: 40px;
     border-top: 2px solid #ff6a00;
-  }
-
-  .skills span:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 10px rgba(255, 106, 0, 0.6);
   }
 
   body.light footer {
@@ -175,11 +180,11 @@
     text-decoration: underline;
   }
 
-  /* per al scroll */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  /* FADE-IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .fade-in.visible {
@@ -210,14 +215,14 @@
 </header>
 
 <section id="about" class="fade-in">
-  <h2>Perfil</h2>
+  <h2 class="fade-in">Perfil</h2>
   <div class="card fade-in">
     <p>Sóc una persona treballadora, pacient i enfocada en oferir resultats òptims...</p>
   </div>
 </section>
 
 <section id="experience" class="fade-in">
-  <h2>Experiència</h2>
+  <h2 class="fade-in">Experiència</h2>
   <div class="grid">
     <div class="card fade-in">
       <h3>Accenture</h3>
@@ -236,7 +241,7 @@
 </section>
 
 <section id="skills" class="fade-in">
-  <h2>Habilitats</h2>
+  <h2 class="fade-in">Habilitats</h2>
   <div class="card fade-in">
     <ul>
       <li>Instal·lar i administrar sistemes operatius</li>
@@ -259,7 +264,7 @@
 </section>
 
 <section id="projects" class="fade-in">
-  <h2>Projectes</h2>
+  <h2 class="fade-in">Projectes</h2>
   <div class="grid">
     <div class="card fade-in">
       <h3>Portfolio Web</h3>
@@ -282,7 +287,7 @@
 </section>
 
 <section id="contact" class="fade-in">
-  <h2>Contacte</h2>
+  <h2 class="fade-in">Contacte</h2>
   <div class="card fade-in">
     <p>Email: ricard.rh20@gmail.com</p>
     <p>Tel: +34 678 146 423</p>
@@ -295,6 +300,7 @@
 </footer>
 
 <script>
+  /* TYPING EFFECT */
   const text = "Ricard Ribas Herrera";
   let i = 0;
 
@@ -305,26 +311,19 @@
       setTimeout(typing, 80);
     }
   }
-
-
   typing();
 
+  /* THEME TOGGLE */
   const toggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
 
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light");
-
-    if (body.classList.contains("light")) {
-      toggleBtn.textContent = "🌙"; 
-    } else {
-      toggleBtn.textContent = "☀️"; 
-    }
+    toggleBtn.textContent = body.classList.contains("light") ? "🌙" : "☀️";
   });
 
-
-  const elements = document.querySelectorAll(".card, section h2");
-
+  /* FADE-IN SCROLL */
+  const elements = document.querySelectorAll(".fade-in");
 
   function fadeInOnScroll() {
     const trigger = window.innerHeight * 0.85;
@@ -339,7 +338,6 @@
 
   window.addEventListener("scroll", fadeInOnScroll);
   fadeInOnScroll();
-
 </script>
 
 </body>

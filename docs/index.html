@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Ricard</title>
 
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"/>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,6 +17,7 @@
       color: #ffffff;
       line-height: 1.6;
       transition: 0.3s;
+      animation: fadeIn 1s ease-in;
     }
 
     body.light {
@@ -26,7 +30,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background: #000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
       border-bottom: 2px solid #ff6a00;
       position: sticky;
       top: 0;
@@ -41,6 +46,22 @@
       margin-left: 20px;
       text-decoration: none;
       font-size: 0.9rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #ff6a00;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .toggle-btn {
@@ -49,6 +70,10 @@
       padding: 8px 12px;
       border-radius: 8px;
       cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      animation: tada 0.6s;
     }
 
     header {
@@ -96,6 +121,13 @@
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(255,106,0,0.2);
+      animation: pulse 0.6s;
     }
 
     body.light .card {
@@ -111,6 +143,11 @@
       margin: 5px;
       border-radius: 8px;
       font-size: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      animation: pulse 0.5s;
     }
 
     footer {
@@ -132,6 +169,12 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-iteration-count: 1;
     }
   </style>
 
@@ -175,7 +218,7 @@
         <li>Tests unitaris amb Java</li>
         <li>Ús d’Apache Sling per mapatge de peticions HTTP</li>
         <li>Treball amb JCR (Apache Jackrabbit Oak)</li>
-        <li>Creació de Sling Models </li>
+        <li>Creació de Sling Models</li>
         <li>Desenvolupament de Servlets per APIs i peticions personalitzades</li>
         <li>Participació en projectes empresarials reals</li>
       </ul>
@@ -242,7 +285,7 @@
     </div>
     <div class="card">
       <h3>Projecte Web amb Symfony i Vue.js</h3>
-      <p>Projecte complet desenvolupat amb Symfony (backend) i Vue.js (frontend), desplegat a AWS amb hosting i configuració completa. Inclou rutes, components dinàmics i integració amb base de dades.</p>
+      <p>Projecte complet desenvolupat amb Symfony (backend) i Vue.js (frontend), desplegat a AWS...</p>
       <a href="http://landing-page-7vision-prod-bucket.s3-website-us-east-1.amazonaws.com/" target="_blank">Veure projecte</a>
     </div>
     <div class="card">
@@ -262,7 +305,7 @@
 </section>
 
 <footer>
-  <p>© 2025 Ricard Ribas Herrera | Portfolio</p>
+  <p>© 2026 Ricard Ribas Herrera | Portfolio</p>
 </footer>
 
 <script>
@@ -277,7 +320,6 @@
     }
   }
 
-
   typing();
 
   const toggleBtn = document.getElementById("theme-toggle");
@@ -285,13 +327,33 @@
 
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light");
-
-    if (body.classList.contains("light")) {
-      toggleBtn.textContent = "🌙"; 
-    } else {
-      toggleBtn.textContent = "☀️"; 
-    }
+    toggleBtn.textContent = body.classList.contains("light") ? "🌙" : "☀️";
   });
+
+  const elements = document.querySelectorAll("section, .card, h1, h2, p");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("animated");
+
+        if (entry.target.tagName === "H1") {
+          entry.target.classList.add("fadeInDown");
+        } else if (entry.target.tagName === "H2") {
+          entry.target.classList.add("fadeInUp");
+        } else if (entry.target.classList.contains("card")) {
+          entry.target.classList.add("bounceIn");
+        } else {
+          entry.target.classList.add("fadeIn");
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
